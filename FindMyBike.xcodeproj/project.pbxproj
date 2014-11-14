@@ -14,6 +14,7 @@
 		E257D4611A16419800F26358 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E257D4601A16419800F26358 /* Images.xcassets */; };
 		E257D4641A16419800F26358 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E257D4621A16419800F26358 /* LaunchScreen.xib */; };
 		E257D4701A16419800F26358 /* FindMyBikeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E257D46F1A16419800F26358 /* FindMyBikeTests.m */; };
+		E257D47A1A16476A00F26358 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E257D4791A16476A00F26358 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		E257D4691A16419800F26358 /* FindMyBikeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindMyBikeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E257D46E1A16419800F26358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E257D46F1A16419800F26358 /* FindMyBikeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindMyBikeTests.m; sourceTree = "<group>"; };
+		E257D4791A16476A00F26358 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E257D47A1A16476A00F26358 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +99,7 @@
 		E257D4531A16419800F26358 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E257D4791A16476A00F26358 /* MapKit.framework */,
 				E257D4541A16419800F26358 /* Info.plist */,
 				E257D4551A16419800F26358 /* main.m */,
 			);
