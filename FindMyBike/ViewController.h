@@ -18,5 +18,7 @@
 
 
 - (IBAction)didPressParkeerButton:(id)sender;
+- (IBAction)centerToGps:(id)sender;
+
 @end
 

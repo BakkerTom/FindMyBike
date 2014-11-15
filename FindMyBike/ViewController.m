@@ -60,4 +60,13 @@
 - (IBAction)didPressParkeerButton:(id)sender {
 }
 
+- (IBAction)centerToGps:(id)sender {
+    MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
+    region.center.latitude = self.locationManager.location.coordinate.latitude;
+    region.center.longitude = self.locationManager.location.coordinate.longitude;
+    region.span.latitudeDelta = 0.0187f;
+    region.span.longitudeDelta = 0.0137f;
+    [self.mapView setRegion:region animated:YES];
+}
+
 @end
