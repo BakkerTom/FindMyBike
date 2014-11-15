@@ -20,26 +20,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Set the mapview delegate to self
     _mapView.delegate = self;
     
+    //Allocate and init the locationManager and set it's delegate to self
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     
+    //Check if system is iOS8 and request gps location
     if(IS_OS_8_OR_LATER) {
         [self.locationManager requestWhenInUseAuthorization];
         [self.locationManager startUpdatingLocation];
     }
+    
+    //Show the user location
     [self.mapView setShowsUserLocation:YES];
     [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     
-    MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
-    region.center.latitude = self.locationManager.location.coordinate.latitude;
-    region.center.longitude = self.locationManager.location.coordinate.longitude;
-    region.span.latitudeDelta = 0.0187f;
-    region.span.longitudeDelta = 0.0137f;
-    [self.mapView setRegion:region animated:YES];
-    
+    //Add a dropshadow under the parkeerButton
     [_parkeerButton.layer setShadowColor:[UIColor blackColor].CGColor];
     [_parkeerButton.layer setShadowOpacity:0.2f];
     [_parkeerButton.layer setShadowRadius:2.0f];
@@ -56,11 +54,14 @@
     return UIStatusBarStyleLightContent;
 }
 
-
 - (IBAction)didPressParkeerButton:(id)sender {
 }
 
-- (IBAction)centerToGps:(id)sender {
+- (IBAction)didPressLocationButton:(id)sender {
+    [self centerToGps];
+}
+
+-(void)centerToGps {
     MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
     region.center.latitude = self.locationManager.location.coordinate.latitude;
     region.center.longitude = self.locationManager.location.coordinate.longitude;
@@ -68,5 +69,13 @@
     region.span.longitudeDelta = 0.0137f;
     [self.mapView setRegion:region animated:YES];
 }
+
+
+
+
+
+
+
+
 
 @end
