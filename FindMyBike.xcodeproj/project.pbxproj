@@ -15,6 +15,7 @@
 		E257D4641A16419800F26358 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E257D4621A16419800F26358 /* LaunchScreen.xib */; };
 		E257D4701A16419800F26358 /* FindMyBikeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E257D46F1A16419800F26358 /* FindMyBikeTests.m */; };
 		E257D47A1A16476A00F26358 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E257D4791A16476A00F26358 /* MapKit.framework */; };
+		E290E9501A17B0F20047B5F2 /* bikeAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E290E94F1A17B0F20047B5F2 /* bikeAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		E257D46E1A16419800F26358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E257D46F1A16419800F26358 /* FindMyBikeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindMyBikeTests.m; sourceTree = "<group>"; };
 		E257D4791A16476A00F26358 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E290E94E1A17B0F20047B5F2 /* bikeAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bikeAnnotation.h; sourceTree = "<group>"; };
+		E290E94F1A17B0F20047B5F2 /* bikeAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bikeAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				E257D45A1A16419800F26358 /* ViewController.h */,
 				E257D45B1A16419800F26358 /* ViewController.m */,
 				E257D45D1A16419800F26358 /* Main.storyboard */,
+				E290E94E1A17B0F20047B5F2 /* bikeAnnotation.h */,
+				E290E94F1A17B0F20047B5F2 /* bikeAnnotation.m */,
 				E257D4601A16419800F26358 /* Images.xcassets */,
 				E257D4621A16419800F26358 /* LaunchScreen.xib */,
 				E257D4531A16419800F26358 /* Supporting Files */,
@@ -224,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E257D45C1A16419800F26358 /* ViewController.m in Sources */,
+				E290E9501A17B0F20047B5F2 /* bikeAnnotation.m in Sources */,
 				E257D4591A16419800F26358 /* AppDelegate.m in Sources */,
 				E257D4561A16419800F26358 /* main.m in Sources */,
 			);

@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import <MapKit/MapKit.h>
+#import "bikeAnnotation.h"
+
+bool isParked = NO;
 
 @interface ViewController ()
 
@@ -37,6 +40,8 @@
     [self.mapView setShowsUserLocation:YES];
     [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     
+    [self centerToGps];
+    
     //Add a dropshadow under the parkeerButton
     [_parkeerButton.layer setShadowColor:[UIColor blackColor].CGColor];
     [_parkeerButton.layer setShadowOpacity:0.2f];
@@ -55,6 +60,26 @@
 }
 
 - (IBAction)didPressParkeerButton:(id)sender {
+    
+    if (isParked) {
+        self.parkeerButton.titleLabel.text = @"PARKEREN";
+        isParked = NO;
+    } else {
+        [self.mapView removeAnnotation:[self.mapView.annotations objectAtIndex:0]];
+        
+        MKPointAnnotation *bikePin = [[MKPointAnnotation alloc] init];
+        
+        CLLocationCoordinate2D coord;
+        coord.latitude = self.locationManager.location.coordinate.latitude;
+        coord.longitude = self.locationManager.location.coordinate.longitude;
+        
+        bikePin.coordinate = coord;
+        
+        [self.mapView addAnnotation:bikePin];
+        
+        self.parkeerButton.titleLabel.text = @"GEPARKEERD";
+        isParked = YES;
+    }
 }
 
 - (IBAction)didPressLocationButton:(id)sender {
