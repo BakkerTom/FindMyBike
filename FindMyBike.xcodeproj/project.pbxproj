@@ -416,6 +416,7 @@
 				E257D4751A16419800F26358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E257D4761A16419800F26358 /* Build configuration list for PBXNativeTarget "FindMyBikeTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +425,7 @@
 				E257D4781A16419800F26358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

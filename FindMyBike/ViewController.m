@@ -33,6 +33,13 @@
     [self.mapView setShowsUserLocation:YES];
     [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     
+    MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
+    region.center.latitude = self.locationManager.location.coordinate.latitude;
+    region.center.longitude = self.locationManager.location.coordinate.longitude;
+    region.span.latitudeDelta = 0.0187f;
+    region.span.longitudeDelta = 0.0137f;
+    [self.mapView setRegion:region animated:YES];
+    
     [_parkeerButton.layer setShadowColor:[UIColor blackColor].CGColor];
     [_parkeerButton.layer setShadowOpacity:0.2f];
     [_parkeerButton.layer setShadowRadius:2.0f];
@@ -41,12 +48,7 @@
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
-    region.center.latitude = self.locationManager.location.coordinate.latitude;
-    region.center.longitude = self.locationManager.location.coordinate.longitude;
-    region.span.latitudeDelta = 0.0187f;
-    region.span.longitudeDelta = 0.0137f;
-    [self.mapView setRegion:region animated:YES];
+    
 }
 
 //Make the statusBar White
