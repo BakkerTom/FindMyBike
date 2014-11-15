@@ -25,14 +25,13 @@
     
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    self.locationManager = [[CLLocationManager alloc] init];
+    
     if(IS_OS_8_OR_LATER) {
         [self.locationManager requestWhenInUseAuthorization];
-        [self.locationManager requestAlwaysAuthorization];
+        [self.locationManager startUpdatingLocation];
     }
-    [self.locationManager startUpdatingLocation];
-    
-    _mapView.showsUserLocation = YES;
+    [self.mapView setShowsUserLocation:YES];
+    [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     
     [_parkeerButton.layer setShadowColor:[UIColor blackColor].CGColor];
     [_parkeerButton.layer setShadowOpacity:0.2f];
@@ -41,24 +40,20 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    MKCoordinateRegion region = { { 0.0, 0.0 }, { 0.0, 0.0 } };
+    region.center.latitude = self.locationManager.location.coordinate.latitude;
+    region.center.longitude = self.locationManager.location.coordinate.longitude;
+    region.span.latitudeDelta = 0.0187f;
+    region.span.longitudeDelta = 0.0137f;
+    [self.mapView setRegion:region animated:YES];
 }
-
 
 //Make the statusBar White
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
 
-- (void)mapView:(MKMapView *)mapView
-didUpdateUserLocation:
-(MKUserLocation *)userLocation
-{
-    _mapView.centerCoordinate =
-    userLocation.location.coordinate;
-}
 
 - (IBAction)didPressParkeerButton:(id)sender {
 }
