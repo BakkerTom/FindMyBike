@@ -50,6 +50,10 @@ bool isTracking = NO;
     
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    [self centerToGps];
+}
+
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     if (isTracking) {
         [self centerToGps];
