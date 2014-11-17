@@ -56,7 +56,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7fH-61-N6l">
-                                <rect key="frame" x="269" y="35" width="36" height="36"/>
+                                <rect key="frame" x="266" y="35" width="39" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="locationOff">
                                     <color key="titleColor" red="0.0" green="0.66274509800000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -82,7 +82,7 @@
     </scenes>
     <resources>
         <image name="blurBackground" width="320" height="568"/>
-        <image name="locationOff" width="36" height="36"/>
+        <image name="locationOff" width="39" height="39"/>
         <image name="sign" width="267" height="133"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
