@@ -11,6 +11,7 @@
 #import "bikeAnnotation.h"
 
 bool isParked = NO;
+bool isTracking = NO;
 
 @interface ViewController ()
 
@@ -51,7 +52,9 @@ bool isParked = NO;
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    
+    if (isTracking) {
+        [self centerToGps];
+    }
 }
 
 //Make the statusBar White
@@ -72,7 +75,15 @@ bool isParked = NO;
 }
 
 - (IBAction)didPressLocationButton:(id)sender {
-    [self centerToGps];
+    if (isTracking) {
+        [self.locationButton setImage:[UIImage imageNamed:@"locationOff"] forState:UIControlStateNormal];
+        isTracking = NO;
+    } else {
+        [self.locationButton setImage:[UIImage imageNamed:@"locationOn"] forState:UIControlStateNormal];
+        [self centerToGps];
+        isTracking = YES;
+    }
+
 }
 
 -(void)centerToGps {

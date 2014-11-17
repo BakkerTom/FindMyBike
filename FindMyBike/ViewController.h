@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton *parkeerButton;
+@property (weak, nonatomic) IBOutlet UIButton *locationButton;
 
 
 - (IBAction)didPressParkeerButton:(id)sender;
