@@ -60,24 +60,13 @@ bool isParked = NO;
 }
 
 - (IBAction)didPressParkeerButton:(id)sender {
-    
     if (isParked) {
-        self.parkeerButton.titleLabel.text = @"PARKEREN";
+        [self.parkeerButton setTitle:@"PARKEREN" forState:UIControlStateNormal];
+        [self.parkeerButton setTitleColor:[UIColor colorWithRed:0.609 green:0.653 blue:0.674 alpha:0.899] forState:UIControlStateNormal];
         isParked = NO;
     } else {
-        [self.mapView removeAnnotation:[self.mapView.annotations objectAtIndex:0]];
-        
-        MKPointAnnotation *bikePin = [[MKPointAnnotation alloc] init];
-        
-        CLLocationCoordinate2D coord;
-        coord.latitude = self.locationManager.location.coordinate.latitude;
-        coord.longitude = self.locationManager.location.coordinate.longitude;
-        
-        bikePin.coordinate = coord;
-        
-        [self.mapView addAnnotation:bikePin];
-        
-        self.parkeerButton.titleLabel.text = @"GEPARKEERD";
+        [self.parkeerButton setTitle:@"GEPARKEERD" forState:UIControlStateNormal];
+        [self.parkeerButton setTitleColor:[UIColor colorWithRed:0.203 green:0.666 blue:0.862 alpha:1] forState:UIControlStateNormal];
         isParked = YES;
     }
 }
