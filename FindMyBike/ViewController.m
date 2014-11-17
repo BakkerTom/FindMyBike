@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import <MapKit/MapKit.h>
-#import "bikeAnnotation.h"
 
 bool isParked = NO;
 bool isTracking = NO;
