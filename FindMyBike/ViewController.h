@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "signCollectionViewCell.h"
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
-@interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIButton *parkeerButton;
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 
 - (IBAction)didPressParkeerButton:(id)sender;

@@ -15,6 +15,7 @@ bool isTracking = NO;
 @interface ViewController ()
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) NSMutableArray *signData;
 
 @end
 
@@ -47,6 +48,26 @@ bool isTracking = NO;
     [_parkeerButton.layer setShadowOpacity:0.2f];
     [_parkeerButton.layer setShadowRadius:2.0f];
     [_parkeerButton.layer setShadowOffset:CGSizeMake(0.0, 1.0)];
+    
+    _signData = [@[@"1",
+                    @"2",
+                    @"3",
+                    @"4",
+                    @"5",
+                    @"6",
+                    @"7",
+                    @"8",
+                    @"9",
+                    @"10",
+                    @"11",
+                    @"12",
+                    @"13",
+                    @"14",
+                    @"15",
+                    @"16",
+                    @"17",
+                    @"anders",
+                    ] mutableCopy];
     
 }
 
@@ -99,7 +120,22 @@ bool isTracking = NO;
 }
 
 
-
+#pragma mark - UICollectionView Datasource
+// 1
+- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
+    return 1;
+}
+// 2
+- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
+    return _signData.count;
+}
+// 3
+- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    signCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"signCell " forIndexPath:indexPath];
+    cell.background.image = [UIImage imageNamed:@"cellBackground"];
+    //cell.label.text = [_signData objectAtIndex:indexPath];
+    return cell;
+}
 
 
 

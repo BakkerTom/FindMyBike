@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5F38B3A1A1B7EC600288793 /* signCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F38B391A1B7EC600288793 /* signCollectionViewCell.m */; };
 		E257D4561A16419800F26358 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E257D4551A16419800F26358 /* main.m */; };
 		E257D4591A16419800F26358 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E257D4581A16419800F26358 /* AppDelegate.m */; };
 		E257D45C1A16419800F26358 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E257D45B1A16419800F26358 /* ViewController.m */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C5F38B381A1B7EC600288793 /* signCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = signCollectionViewCell.h; sourceTree = "<group>"; };
+		C5F38B391A1B7EC600288793 /* signCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = signCollectionViewCell.m; sourceTree = "<group>"; };
 		E257D4501A16419800F26358 /* FindMyBike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMyBike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E257D4541A16419800F26358 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E257D4551A16419800F26358 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 				E257D45A1A16419800F26358 /* ViewController.h */,
 				E257D45B1A16419800F26358 /* ViewController.m */,
 				E257D45D1A16419800F26358 /* Main.storyboard */,
+				C5F38B381A1B7EC600288793 /* signCollectionViewCell.h */,
+				C5F38B391A1B7EC600288793 /* signCollectionViewCell.m */,
 				E257D4601A16419800F26358 /* Images.xcassets */,
 				E257D4621A16419800F26358 /* LaunchScreen.xib */,
 				E257D4531A16419800F26358 /* Supporting Files */,
@@ -226,6 +231,7 @@
 				E257D45C1A16419800F26358 /* ViewController.m in Sources */,
 				E257D4591A16419800F26358 /* AppDelegate.m in Sources */,
 				E257D4561A16419800F26358 /* main.m in Sources */,
+				C5F38B3A1A1B7EC600288793 /* signCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
