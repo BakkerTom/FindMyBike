@@ -131,9 +131,9 @@ bool isTracking = NO;
 }
 // 3
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    signCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"signCell " forIndexPath:indexPath];
+    signCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"signCell" forIndexPath:indexPath];
     cell.background.image = [UIImage imageNamed:@"cellBackground"];
-    //cell.label.text = [_signData objectAtIndex:indexPath];
+    cell.label.text = [_signData objectAtIndex:indexPath.row];
     return cell;
 }
 
