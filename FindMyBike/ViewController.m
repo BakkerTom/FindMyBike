@@ -75,6 +75,23 @@ bool isTracking = NO;
     [self centerToGps];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    CGSize scrollViewSize = self.scrollView.frame.size;
+    self.scrollView.contentSize = CGSizeMake(scrollViewSize.width * _signData.count, scrollViewSize.height);
+    
+    for (int i = 1; i < _signData.count; i++) {
+        UIImageView *cellBackgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cellBackground"]];
+        [cellBackgroundImageView setFrame:CGRectMake(scrollViewSize.width * i, 0, scrollViewSize.width, scrollViewSize.height)];
+                                                    
+        UILabel *signLabel = [[UILabel alloc] initWithFrame:CGRectMake(scrollViewSize.width * i, 0, scrollViewSize.width, scrollViewSize.height)];
+        
+        signLabel.text = [_signData objectAtIndex:i];
+        [self.scrollView addSubview:cellBackgroundImageView];
+        [self.scrollView addSubview:signLabel];
+    }
+    
+}
+
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     if (isTracking) {
         [self centerToGps];
@@ -118,25 +135,6 @@ bool isTracking = NO;
     region.span.longitudeDelta = 0.0137f;
     [self.mapView setRegion:region animated:YES];
 }
-
-
-#pragma mark - UICollectionView Datasource
-// 1
-- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return 1;
-}
-// 2
-- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
-    return _signData.count;
-}
-// 3
-- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    signCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"signCell" forIndexPath:indexPath];
-    cell.background.image = [UIImage imageNamed:@"cellBackground"];
-    cell.label.text = [_signData objectAtIndex:indexPath.row];
-    return cell;
-}
-
 
 
 
